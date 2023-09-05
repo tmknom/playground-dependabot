@@ -1,0 +1,12 @@
+changelog:
+  categories:
+    - title: Breaking Changes
+      labels:
+        - breaking-change
+    - title: New Features
+      labels:
+        - new-feature
+        - enhancement
+    - title: Other Changes
+      labels:
+        - '*'
