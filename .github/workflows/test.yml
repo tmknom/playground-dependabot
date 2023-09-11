@@ -1,0 +1,19 @@
+name: Test
+on:
+  pull_request:
+jobs:
+  normal-job:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: echo test
+  error-job:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: echo test
+  slow-job:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: echo test

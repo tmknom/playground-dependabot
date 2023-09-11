@@ -1,7 +1,0 @@
-name: Version Updates
-on: pull_request
-jobs:
-  run:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
