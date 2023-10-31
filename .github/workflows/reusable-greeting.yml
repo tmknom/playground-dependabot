@@ -1,0 +1,31 @@
+name: Reusable Greeting
+on:
+  workflow_call:
+    inputs:
+      pr-number:
+        type: string
+        required: true
+        description: プルリクエスト番号
+    secrets:
+      token:
+        required: true
+        description: GitHubトークン
+    outputs:
+      message:
+        value: ${{ jobs.comment.outputs.pr-message }}
+        description: メッセージ
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - id: pr-comment
+        run: gh pr comment "${PR_NUMBER}" --body "Hi, ${GITHUB_ACTOR}!"
+        env:
+          PR_NUMBER: ${{ inputs.pr-number }}
+          GITHUB_TOKEN: ${{ secrets.token }}
+    outputs:
+      pr-message: ${{ steps.pr-comment.outputs.message }}
