@@ -7,4 +7,4 @@ changelog:
     labels:          # ラベルの除外
       - bug
     authors:         # GitHubアカウントの除外
-      - dependabot[bot]
+      - dependabot
