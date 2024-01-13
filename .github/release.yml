@@ -7,3 +7,8 @@ changelog:
       labels:
         - bug
         - fixes
+  exclude:           # リリースノートの除外設定
+    labels:          # ラベルの除外
+      - dependencies
+    authors:         # GitHubアカウントの除外
+      - dependabot[bot]
