@@ -1,0 +1,12 @@
+name: Create GitHub App Token
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/create-github-app-token@f04aa94d10cf56334d1c580e077ce2e3569e805d # v1.6.3
+        with:
+          app-id: dummy
+          private-key: dummy
